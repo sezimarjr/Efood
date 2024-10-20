@@ -3,12 +3,12 @@ import { TagContainer } from '../Tag/styles'
 import { cores } from '../../styles'
 
 export const Card = styled.div`
-  width: 472px;
-  position: absolute;
+  position: relative;
   border-width: 0px 1px 1px 1px;
   border-style: solid;
   border-color: ${cores.laranja};
   color: ${cores.laranja};
+  margin-bottom: 48px;
 
   background-color: #fff;
   ${TagContainer} {
@@ -54,4 +54,5 @@ export const Button = styled.button`
   padding: 4px 6px;
   border: none;
   font-size: 14px;
+  cursor: pointer;
 `
