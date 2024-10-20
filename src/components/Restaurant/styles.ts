@@ -56,4 +56,5 @@ export const Button = styled(Link)`
   border: none;
   font-size: 14px;
   cursor: pointer;
+  text-decoration: none;
 `

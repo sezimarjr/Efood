@@ -33,4 +33,5 @@ export const ProductButton = styled.button`
   cursor: pointer;
   margin-top: 8px;
   font-weight: bold;
+  text-decoration: none;
 `

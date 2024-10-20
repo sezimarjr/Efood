@@ -2,6 +2,7 @@ import { FoodType, MainHeader, RestaurantHero, RestaurantTitle } from './styles'
 import logo from '../../assets/images/logo.png'
 import resBanner from '../../assets/images/imagem_de_fundo.png'
 import banner from '../../assets/images/Vector.png'
+import { Link } from 'react-router-dom'
 
 const HeaderProducts = () => {
   return (
@@ -9,7 +10,10 @@ const HeaderProducts = () => {
       <MainHeader style={{ backgroundImage: `url(${banner})` }}>
         <div className="container">
           <h3>Restaurantes</h3>
-          <img src={logo} alt="teste" />
+          <Link to="/">
+            <img src={logo} alt="teste" />
+          </Link>
+
           <h3>0 produto(s) no carrinho</h3>
         </div>
       </MainHeader>
