@@ -1,4 +1,3 @@
-import Header from '../../components/Header'
 import RestaurantClass from '../../models/Restaurant'
 import imageRes from '../../assets/images/imagem.png'
 import imageRes2 from '../../assets/images/image 1.png'
