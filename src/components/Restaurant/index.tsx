@@ -36,7 +36,7 @@ const Restaurant = ({ title, description, image, rating, infos }: Props) => {
         </TitleContent>
 
         <Descricao>{description}</Descricao>
-        <Button type="button">Saiba Mais</Button>
+        <Button to={'/restaurant'}>Saiba Mais</Button>
       </Content>
     </Card>
   )

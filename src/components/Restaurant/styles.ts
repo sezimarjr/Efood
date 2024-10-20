@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { TagContainer } from '../Tag/styles'
 import { cores } from '../../styles'
+import { Link } from 'react-router-dom'
 
 export const Card = styled.div`
   position: relative;
@@ -48,7 +49,7 @@ export const TitleContent = styled.div`
   }
 `
 
-export const Button = styled.button`
+export const Button = styled(Link)`
   background-color: ${cores.laranja};
   color: #ffebd9;
   padding: 4px 6px;

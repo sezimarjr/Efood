@@ -2,6 +2,7 @@ import RestaurantClass from '../../models/Restaurant'
 import imageRes from '../../assets/images/imagem.png'
 import imageRes2 from '../../assets/images/image 1.png'
 import RestaurantsList from '../../components/RestaurantsList'
+import Header from '../../components/Header'
 
 const restaurants: RestaurantClass[] = [
   {
@@ -63,6 +64,7 @@ const restaurants: RestaurantClass[] = [
 const Home = () => {
   return (
     <>
+      <Header />
       <RestaurantsList restaurants={restaurants} />
     </>
   )
