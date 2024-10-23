@@ -1,10 +1,13 @@
 import { FoodType, MainHeader, RestaurantHero, RestaurantTitle } from './styles'
 import logo from '../../assets/images/logo.png'
-import resBanner from '../../assets/images/imagem_de_fundo.png'
 import banner from '../../assets/images/Vector.png'
 import { Link } from 'react-router-dom'
+import { Restaurante } from '../../pages/Home'
 
-const HeaderProducts = () => {
+type Props = {
+  restaurante: Restaurante
+}
+const HeaderProducts = ({ restaurante }: Props) => {
   return (
     <div>
       <MainHeader style={{ backgroundImage: `url(${banner})` }}>
@@ -19,10 +22,10 @@ const HeaderProducts = () => {
       </MainHeader>
 
       {/* Div para imagem restaurante */}
-      <RestaurantHero style={{ backgroundImage: `url(${resBanner})` }}>
+      <RestaurantHero style={{ backgroundImage: `url(${restaurante.capa})` }}>
         <div className="container">
-          <FoodType>Italiana</FoodType>
-          <RestaurantTitle>La Dolce Vita Trattoria</RestaurantTitle>
+          <FoodType>{restaurante.tipo}</FoodType>
+          <RestaurantTitle>{restaurante.titulo}</RestaurantTitle>
         </div>
       </RestaurantHero>
     </div>

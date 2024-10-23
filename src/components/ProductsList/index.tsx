@@ -1,9 +1,9 @@
-import Products from '../../models/Product'
+import { Cardapio } from '../../pages/Home'
 import Product from '../Product'
 import { Links } from './styles'
 
 type Props = {
-  products: Products[]
+  products: Cardapio[]
 }
 
 const ProductsList = ({ products }: Props) => {
@@ -14,9 +14,9 @@ const ProductsList = ({ products }: Props) => {
           {products.map((product) => (
             <Product
               key={product.id}
-              image={product.image}
-              title={product.title}
-              description={product.description}
+              image={product.foto}
+              title={product.nome}
+              description={product.descricao}
             />
           ))}
         </Links>

@@ -23,9 +23,22 @@ export const RestaurantHero = styled.div`
   background-size: cover;
   padding-top: 24px;
   padding-bottom: 32px;
+  position: relative;
+
+  &::after {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: '';
+  }
 
   .container {
     height: 100%;
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

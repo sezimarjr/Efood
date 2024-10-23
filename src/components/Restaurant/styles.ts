@@ -11,6 +11,12 @@ export const Card = styled.div`
   color: ${cores.laranja};
   margin-bottom: 48px;
 
+  > img {
+    object-fit: cover;
+    width: 100%;
+    height: 220px;
+  }
+
   background-color: #fff;
   ${TagContainer} {
     margin-right: 8px;

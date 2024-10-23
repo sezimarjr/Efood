@@ -11,20 +11,35 @@ import {
 import estrela from '../../assets/images/estrela.png'
 
 type Props = {
+  id: number
   title: string
   description: string
-  image: string
+  cover: string
   rating: string
-  infos: string[]
+  info: string
+  destacado: boolean
 }
-const Restaurant = ({ title, description, image, rating, infos }: Props) => {
+const Restaurant = ({
+  title,
+  description,
+  cover,
+  rating,
+  info,
+  id,
+  destacado
+}: Props) => {
+  const getDescricao = (descricao: string) => {
+    if (descricao.length > 92) {
+      return descricao.slice(0, 250) + '...'
+    }
+    return descricao
+  }
   return (
     <Card>
-      <img src={image} alt={title} />
+      <img src={cover} alt={title} />
       <Infos>
-        {infos.map((info) => (
-          <Tag key={info}>{info}</Tag>
-        ))}
+        {destacado && <Tag>Destaque da semana</Tag>}
+        <Tag>{info}</Tag>
       </Infos>
       <Content>
         <TitleContent>
@@ -35,8 +50,8 @@ const Restaurant = ({ title, description, image, rating, infos }: Props) => {
           </Rating>
         </TitleContent>
 
-        <Descricao>{description}</Descricao>
-        <Button to={'/restaurant'}>Saiba Mais</Button>
+        <Descricao>{getDescricao(description)}</Descricao>
+        <Button to={`/restaurant/${id}`}>Saiba Mais</Button>
       </Content>
     </Card>
   )
