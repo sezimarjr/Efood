@@ -13,10 +13,13 @@ const ProductsList = ({ products }: Props) => {
         <Links>
           {products.map((product) => (
             <Product
+              id={product.id}
               key={product.id}
-              image={product.foto}
-              title={product.nome}
-              description={product.descricao}
+              foto={product.foto}
+              nome={product.nome}
+              descricao={product.descricao}
+              porcao={product.porcao}
+              preco={product.preco}
             />
           ))}
         </Links>

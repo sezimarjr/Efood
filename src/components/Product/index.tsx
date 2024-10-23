@@ -1,10 +1,26 @@
+import { useState } from 'react'
 import * as S from './styles'
+import close from '../../assets/images/close.png'
+
 type Props = {
-  title: string
-  description: string
-  image: string
+  nome: string
+  descricao: string
+  foto: string
+  porcao: string
+  preco: number
+  id: number
 }
-const Product = ({ title, description, image }: Props) => {
+
+export const formataPreco = (price = 0) => {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+    minimumFractionDigits: 2
+  }).format(price)
+}
+const Product = ({ nome, descricao, foto, porcao, preco, id }: Props) => {
+  const [modal, setModal] = useState(false)
+
   const getDescricao = (descricao: string) => {
     if (descricao.length > 92) {
       return descricao.slice(0, 120) + '...'
@@ -14,15 +30,37 @@ const Product = ({ title, description, image }: Props) => {
   return (
     <>
       <S.Container>
-        <img src={image} alt={title} />
+        <img src={foto} alt={nome} />
 
         <S.ProductContent>
-          <S.ProductTitle>{title}</S.ProductTitle>
-          <p>{getDescricao(description)}</p>
-          <S.ProductButton type="submit">Mais detalhes</S.ProductButton>
+          <S.ProductTitle>{nome}</S.ProductTitle>
+          <p>{getDescricao(descricao)}</p>
+          <S.ProductButton onClick={() => setModal(true)}>
+            Mais detalhes
+          </S.ProductButton>
         </S.ProductContent>
       </S.Container>
-      <div>teste</div>
+      <S.Modal className={modal ? 'visible' : ''}>
+        <S.ModalContent className="container">
+          <img src={foto} alt={nome} />
+          <div className="close" onClick={() => setModal(false)}>
+            <img src={close} alt="Botão de fechar" />
+          </div>
+          <div className="details">
+            <h2>{nome}</h2>
+            <p>
+              {descricao}
+              <br />
+              <br />
+              Serve: {porcao}
+            </p>
+
+            <S.Botao>Adicionar ao carrinho - R$ {formataPreco(preco)}</S.Botao>
+          </div>
+        </S.ModalContent>
+
+        <div className="overlay" onClick={() => setModal(false)} />
+      </S.Modal>
     </>
   )
 }

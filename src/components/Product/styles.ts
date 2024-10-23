@@ -49,7 +49,7 @@ export const Modal = styled.div`
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: rgba(0, 0, 0, 0.5);
+
   display: none;
   justify-content: center;
   align-items: center;
@@ -57,6 +57,61 @@ export const Modal = styled.div`
   &.visible {
     display: flex;
   }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 `
 
-export const ModalContent = styled.div``
+export const ModalContent = styled.div`
+  background-color: ${cores.laranja};
+  color: #ffffff;
+  padding: 32px;
+  max-width: 1024px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 24px;
+
+  .close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+  }
+
+  > img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+  }
+
+  .details {
+    width: 100%;
+    h2 {
+      font-size: 18px;
+      font-weight: 900;
+    }
+    p {
+      margin: 16px 0;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 22px;
+    }
+  }
+`
+
+export const Botao = styled.button`
+  background-color: #ffebd9;
+  color: ${cores.laranja};
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px 6px;
+  border: none;
+  cursor: pointer;
+`

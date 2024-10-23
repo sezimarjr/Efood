@@ -4,8 +4,8 @@ import Header from '../../components/Header'
 
 export type Cardapio = {
   foto: string
-  preco: string
-  id: string
+  preco: number
+  id: number
   nome: string
   descricao: string
   porcao: string
