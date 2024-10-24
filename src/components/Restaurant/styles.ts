@@ -19,7 +19,7 @@ export const Card = styled.div`
 
   background-color: #fff;
   ${TagContainer} {
-    margin-right: 8px;
+    margin-left: 8px;
   }
 `
 
