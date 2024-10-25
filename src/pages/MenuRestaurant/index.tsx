@@ -1,21 +1,14 @@
 import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import { Restaurante } from '../Home'
+import { useGetRestaurantQuery } from '../../services/api'
+
 import ProductsList from '../../components/ProductsList'
 import HeaderProducts from '../../components/HeaderProducts'
 
 const MenuRestaurant = () => {
   const { id } = useParams()
 
-  const [restaurant, setRestaurant] = useState<Restaurante>()
-
-  useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`).then(
-      (res) => {
-        return res.json().then((res) => setRestaurant(res))
-      }
-    )
-  }, [id])
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  const { data: restaurant } = useGetRestaurantQuery(id!)
 
   if (!restaurant) {
     return (
