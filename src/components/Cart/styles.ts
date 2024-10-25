@@ -32,6 +32,7 @@ export const SideBar = styled.aside`
   max-width: 360px;
   width: 100%;
   z-index: 1;
+  overflow: auto;
 `
 export const CartItem = styled.div`
   display: flex;
