@@ -1,6 +1,8 @@
+import { useDispatch } from 'react-redux'
 import { useState } from 'react'
 import * as S from './styles'
 import close from '../../assets/images/close.png'
+import { add, open } from '../../store/reducers/cart'
 
 type Props = {
   nome: string
@@ -19,7 +21,22 @@ export const formataPreco = (price = 0) => {
   }).format(price)
 }
 const Product = ({ nome, descricao, foto, porcao, preco, id }: Props) => {
+  const dispatch = useDispatch()
   const [modal, setModal] = useState(false)
+
+  const addToCart = () => {
+    dispatch(
+      add({
+        nome,
+        descricao,
+        foto,
+        porcao,
+        preco,
+        id
+      })
+    )
+    dispatch(open())
+  }
 
   const getDescricao = (descricao: string) => {
     if (descricao.length > 92) {
@@ -55,7 +72,14 @@ const Product = ({ nome, descricao, foto, porcao, preco, id }: Props) => {
               Serve: {porcao}
             </p>
 
-            <S.Botao>Adicionar ao carrinho - R$ {formataPreco(preco)}</S.Botao>
+            <S.Botao
+              onClick={() => {
+                addToCart()
+                setModal(false)
+              }}
+            >
+              Adicionar ao carrinho - R$ {formataPreco(preco)}
+            </S.Botao>
           </div>
         </S.ModalContent>
 
