@@ -15,7 +15,7 @@ type PurchasePayload = {
   products: Product[]
   delivery: {
     receiver: string
-    adress: {
+    address: {
       description?: string
       city: string
       zipCode: string
