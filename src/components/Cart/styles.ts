@@ -2,6 +2,16 @@ import styled from 'styled-components'
 import { cores } from '../../styles'
 import lixeira from '../../assets/images/lixeira.png'
 
+type RowProps = {
+  gap?: string
+}
+type InputGroupProps = {
+  maxWidth?: string
+}
+type TabButtonProps = {
+  marginTop?: string
+}
+
 export const Overlay = styled.div`
   position: absolute;
   top: 0;
@@ -33,6 +43,13 @@ export const SideBar = styled.aside`
   width: 100%;
   z-index: 1;
   overflow: auto;
+
+  > h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffebd9;
+    margin-bottom: 16px;
+  }
 `
 export const CartItem = styled.div`
   display: flex;
@@ -93,4 +110,39 @@ export const CartButton = styled.button`
   color: ${cores.laranja};
   font-size: 14px;
   font-weight: bold;
+`
+
+export const InputGroup = styled.div<InputGroupProps>`
+  margin-bottom: 8px;
+  flex: auto;
+  color: #ffebd9;
+  font-size: 14px;
+  font-weight: bold;
+  max-width: ${(props) => props.maxWidth || 'auto'};
+  label {
+    margin-bottom: 8px;
+    display: block;
+  }
+  input {
+    width: 100%;
+    height: 32px;
+    background-color: #ffebd9;
+    border: none;
+    color: #4b4b4b;
+    font-weight: bold;
+    padding: 8px;
+  }
+`
+export const Row = styled.div<RowProps>`
+  display: flex;
+  gap: ${(props) => props.gap || '0'};
+  margin-bottom: 8px;
+`
+export const TabButton = styled.div<TabButtonProps>`
+  ${CartButton} {
+    margin-bottom: 8px;
+  }
+  &.margin-top {
+    margin-top: ${(props) => props.marginTop || '24px'};
+  }
 `
