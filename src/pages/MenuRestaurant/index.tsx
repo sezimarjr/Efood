@@ -3,6 +3,7 @@ import { useGetRestaurantQuery } from '../../services/api'
 
 import ProductsList from '../../components/ProductsList'
 import HeaderProducts from '../../components/HeaderProducts'
+import Loader from '../../components/Loader'
 
 const MenuRestaurant = () => {
   const { id } = useParams()
@@ -13,7 +14,7 @@ const MenuRestaurant = () => {
   if (!restaurant) {
     return (
       <>
-        <h1>Carregando</h1>
+        <Loader />
       </>
     )
   }

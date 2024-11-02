@@ -1,6 +1,7 @@
 import { useGetRestaurantsListQuery } from '../../services/api'
 import RestaurantsList from '../../components/RestaurantsList'
 import Header from '../../components/Header'
+import Loader from '../../components/Loader'
 
 export type Cardapio = {
   foto: string
@@ -25,7 +26,7 @@ const Home = () => {
   const { data: restaurants } = useGetRestaurantsListQuery()
 
   if (!restaurants) {
-    return <h1>Carregando</h1>
+    return <Loader />
   }
 
   return (
