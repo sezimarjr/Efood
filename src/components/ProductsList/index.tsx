@@ -1,4 +1,3 @@
-import { Cardapio } from '../../pages/Home'
 import Product from '../Product'
 import { Links } from './styles'
 

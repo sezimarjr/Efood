@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import logo from '../../assets/images/logo.png'
 import banner from '../../assets/images/Vector.png'
 import { Link } from 'react-router-dom'
-import { Restaurante } from '../../pages/Home'
 import { RootReducer } from '../../store'
 
 type Props = {
