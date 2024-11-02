@@ -50,6 +50,12 @@ export const SideBar = styled.aside`
     color: #ffebd9;
     margin-bottom: 16px;
   }
+
+  .empty-cart {
+    text-align: center;
+    color: #ffebd9;
+    font-size: 14px;
+  }
 `
 export const CartItem = styled.div`
   display: flex;
@@ -131,6 +137,10 @@ export const InputGroup = styled.div<InputGroupProps>`
     color: #4b4b4b;
     font-weight: bold;
     padding: 8px;
+
+    &.error {
+      border: 2px solid red;
+    }
   }
 `
 export const Row = styled.div<RowProps>`
@@ -144,5 +154,19 @@ export const TabButton = styled.div<TabButtonProps>`
   }
   &.margin-top {
     margin-top: ${(props) => props.marginTop || '24px'};
+  }
+`
+export const CheckoutMessage = styled.div`
+  color: #ffebd9;
+  margin-bottom: 24px;
+  h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  p {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
   }
 `
