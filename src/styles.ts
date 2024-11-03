@@ -5,6 +5,12 @@ export const cores = {
   background: '#FFF8F2'
 }
 
+export const breakpoints = {
+  mobile: '424px',
+  tablet: '767px',
+  desktop: '1023px'
+}
+
 export const GlobalCss = createGlobalStyle`
   * {
     margin: 0;

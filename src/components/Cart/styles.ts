@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 import lixeira from '../../assets/images/lixeira.png'
 
 type RowProps = {
@@ -55,6 +55,9 @@ export const SideBar = styled.aside`
     text-align: center;
     color: #ffebd9;
     font-size: 14px;
+  }
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 70%;
   }
 `
 export const CartItem = styled.div`

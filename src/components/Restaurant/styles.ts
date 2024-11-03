@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { TagContainer } from '../Tag/styles'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 import { Link } from 'react-router-dom'
 
 export const Card = styled.div`
@@ -10,6 +10,18 @@ export const Card = styled.div`
   border-color: ${cores.laranja};
   color: ${cores.laranja};
   margin-bottom: 48px;
+  width: 100%;
+  /* max-width: 472px; */
+  @media (max-width: ${breakpoints.desktop}) {
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto 48px;
+  }
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 428px;
+    width: 90%;
+    margin: 0 auto 48px;
+  }
 
   > img {
     object-fit: cover;

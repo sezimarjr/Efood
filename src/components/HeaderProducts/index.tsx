@@ -5,6 +5,7 @@ import logo from '../../assets/images/logo.png'
 import banner from '../../assets/images/Vector.png'
 import { Link } from 'react-router-dom'
 import { RootReducer } from '../../store'
+import { breakpoints } from '../../styles'
 
 type Props = {
   restaurante: Restaurante
@@ -20,7 +21,12 @@ const HeaderProducts = ({ restaurante }: Props) => {
     <div>
       <MainHeader style={{ backgroundImage: `url(${banner})` }}>
         <div className="container">
-          <h3>Restaurantes</h3>
+          {parseInt(breakpoints.desktop) < window.innerWidth ? (
+            <h3>Restaurantes</h3>
+          ) : (
+            <></>
+          )}
+
           <Link to="/">
             <img src={logo} alt="teste" />
           </Link>

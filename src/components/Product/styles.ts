@@ -1,11 +1,14 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const Container = styled.div`
   background-color: ${cores.laranja};
   color: #ffebd9;
   padding: 8px;
   margin-bottom: 32px;
+  @media (max-width: ${breakpoints.desktop}) {
+    max-width: 350px;
+  }
 
   > img {
     width: 100%;
@@ -77,12 +80,25 @@ export const ModalContent = styled.div`
   z-index: 1;
   display: flex;
   gap: 24px;
+  @media (max-width: ${breakpoints.desktop}) {
+    max-width: 767px;
+    width: 90%;
+    padding: 16px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
 
   .close {
     position: absolute;
     top: 16px;
     right: 16px;
     cursor: pointer;
+    @media (max-width: ${breakpoints.tablet}) {
+      top: 8px;
+      right: 8px;
+    }
   }
 
   > img {

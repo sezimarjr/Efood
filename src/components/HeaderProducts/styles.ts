@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { breakpoints, cores } from '../../styles'
 
 export const MainHeader = styled.div`
   height: 186px;
@@ -15,6 +15,9 @@ export const MainHeader = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (max-width: ${breakpoints.desktop}) {
+      justify-content: space-evenly;
+    }
   }
 `
 export const RestaurantHero = styled.div`
@@ -44,6 +47,9 @@ export const RestaurantHero = styled.div`
     justify-content: space-between;
     color: #ffffff;
     font-size: 32px;
+    @media (max-width: ${breakpoints.desktop}) {
+      padding-left: 40px;
+    }
   }
 `
 
